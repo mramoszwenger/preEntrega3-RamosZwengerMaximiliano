@@ -8,13 +8,6 @@ const botonPresupuesto = document.querySelector('#botonPresupuesto');
 
 let validarForm = false;
 
-// Valor Servicios
-
-const admSistemas = 5538;
-const solNube = 8946;
-const consTecnologica = 5000;
-const porcentajeIva = 0.21;
-
 // Funcion Cotizador Rapido
 
 function calcularServicio() {
@@ -23,27 +16,36 @@ function calcularServicio() {
     const servicioValor = servicio.value;
     const unidadesValor = unidades.value;
 
+    // Valor Servicios
+    let costoServicio = 0;
+
+    const admSistemas = 5538;
+    const solNube = 8946;
+    const consTecnologica = 5000;
+    const porcentajeIva = 0.21;
+
     switch (servicioValor) {
-        case "admSistemas":
-            costoServicio = (unidadesValor * admSistemas);
+        case "Administración de Sistemas (por Terminal de Usuario)":
+            costoServicio = Math.round(unidadesValor * admSistemas);
             break;
-        case "solNube":
-            costoServicio = (unidadesValor * solNube);
+        case "Soluciones en la Nube (por Servidor)":
+            costoServicio = Math.round(unidadesValor * solNube);
             break;
-        case "consTecnologica":
-            costoServicio = (unidadesValor * consTecnologica);
+        case "Consultoría en Innovación y Soluciones Tecnológicas (por Hora)":
+            costoServicio = Math.round(unidadesValor * consTecnologica);
             break;
         default:
             costoServicio = 0;
     }
 
-    const costoConIva = ((costoServicio * porcentajeIva) + costoServicio);
+    const costoConIva = (Math.round((costoServicio * porcentajeIva) + costoServicio).toFixed(2).replace('.', ','));
+
     console.log("Usuario:", usuarioValor);
     console.log("Correo:", correoValor);
     console.log("Servicio:", servicioValor);
     console.log("Unidades:", unidadesValor);
-    console.log("Costo del servicio (sin IVA): $" + costoServicio.toFixed(2));
-    console.log("Costo del servicio (con IVA): $" + costoConIva.toFixed(2).replace('.', ','));
+    console.log("Costo del servicio (sin IVA): $" + costoServicio.toFixed(2).replace('.', ','));
+    console.log("Costo del servicio (con IVA): $" + costoConIva);
 }
 
 formularioCotizaciones.addEventListener('submit', (e) => {
@@ -106,7 +108,6 @@ function campoValido(input) {
     input.classList.remove('is-invalid');
     input.classList.add('is-valid');
 }
-
 
 // Solicutud Presupuesto a Medida
 
