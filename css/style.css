@@ -97,6 +97,30 @@
     display: none !important;
 }
 
+#btnSi {
+    background-color: #13C0E5;
+    border-color: #13C0E5;
+    box-shadow: #000000 1px 0 10px;
+    border-radius: 10px;
+}
+
+#btnSi:hover {
+    background-color: #084E5E;
+    border-color: #084E5E;
+}
+
+#btnNo {
+    background-color: #13C0E5;
+    border-color: #13C0E5;
+    box-shadow: #000000 1px 0 10px;
+    border-radius: 10px;
+}
+
+#btnNo:hover {
+    background-color: #084E5E;
+    border-color: #084E5E;
+}
+
 .subtitle__custom {
     font-size: 20px;
     color: #333333;
