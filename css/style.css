@@ -52,6 +52,12 @@
     color: #333333;
 }
 
+.service__selector {
+    font-size: 20px;
+    color: #333333;
+    text-shadow: #000000 1px 0 10px;
+}
+
 .quoter #botonCotizar {
     background-color: #13C0E5;
     border-color: #13C0E5;
@@ -77,6 +83,7 @@
 .subtitle__custom {
     font-size: 20px;
     color: #333333;
+    text-shadow: #000000 1px 0 10px;
     margin-top: 15%;
 }
 
@@ -91,4 +98,10 @@
     font-weight: 600;
     transition: 0.5s;
     color: #ffffff;
+}
+
+#botonPresupuesto:hover {
+    background-color: #084E5E;
+    border-color: #084E5E;
+    padding: 1.25% 10.25% 1.25% 10.25%;
 }

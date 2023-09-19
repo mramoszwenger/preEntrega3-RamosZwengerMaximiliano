@@ -23,17 +23,15 @@ function calcularServicio() {
     const servicioValor = servicio.value;
     const unidadesValor = unidades.value;
 
-    let costoServicio = 0;
-
     switch (servicioValor) {
         case "admSistemas":
-            costoServicio = unidadesValor * admSistemas;
+            costoServicio = (unidadesValor * admSistemas);
             break;
         case "solNube":
-            costoServicio = unidadesValor * solNube;
+            costoServicio = (unidadesValor * solNube);
             break;
         case "consTecnologica":
-            costoServicio = unidadesValor * consTecnologica;
+            costoServicio = (unidadesValor * consTecnologica);
             break;
         default:
             costoServicio = 0;
