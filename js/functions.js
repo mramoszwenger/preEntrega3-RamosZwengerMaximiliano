@@ -48,12 +48,67 @@ function calcularServicio() {
     console.log("Costo del servicio (con IVA): $" + costoConIva.toFixed(2).replace('.', ','));
 }
 
-
 formularioCotizaciones.addEventListener('submit', (e) => {
     e.preventDefault();
     calcularServicio();
     console.log(e);
 });
+
+inputs.forEach(input => {
+    input.addEventListener('input', (e)=> {
+        console.log(e.target.value);
+    });
+})
+
+// Validar Datos
+
+formularioCotizaciones.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Validar campo de usuario
+    if (!usuario.value.trim()) {
+        campoError(usuario);
+        return;
+    } else {
+        campoValido(usuario);
+    }
+    
+    // Validar campo de correo
+    if (!correo.value.trim()) {
+        campoError(correo);
+        return;
+    } else {
+        campoValido(correo);
+    }
+
+    // Validar campo de servicio
+    if (servicio.value === "") {
+        campoError(servicio);
+        return;
+    } else {
+        campoValido(servicio);
+    }
+
+    // Validar campo de unidades
+    if (!unidades.value.trim()) {
+        campoError(unidades);
+        return;
+    } else {
+        campoValido(unidades);
+    }
+
+});
+
+function campoError(input) {
+    input.classList.add('is-invalid');
+    input.classList.remove('is-valid');
+}
+
+function campoValido(input) {
+    input.classList.remove('is-invalid');
+    input.classList.add('is-valid');
+}
+
 
 // Solicutud Presupuesto a Medida
 
@@ -66,10 +121,3 @@ botonPresupuesto.addEventListener('click', () => {
   
     window.location.href = mailtoLink;
   });
-  
-
-inputs.forEach(input => {
-    input.addEventListener('input', (e)=> {
-        console.log(e.target.value);
-    });
-})
