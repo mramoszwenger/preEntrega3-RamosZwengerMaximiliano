@@ -140,7 +140,7 @@ formularioCotizaciones.addEventListener('submit', (e) => {
     }
 
     // Validar campo de servicio
-    
+
     if (servicio.value === "") {
         campoError(servicio);
         return;
@@ -149,23 +149,23 @@ formularioCotizaciones.addEventListener('submit', (e) => {
     }
 
     // Validar campo de unidades según el servicio seleccionado
-
+    
     const servicioValor = servicio.value;
-    if (servicioValor === "Administración de Sistemas (por Terminal de Usuario)") {
+    if (servicioValor === "Administración de Sistemas") {
         if (!campoTerminales.value.trim()) {
             campoError(campoTerminales);
             return;
         } else {
             campoValido(campoTerminales);
         }
-    } else if (servicioValor === "Soluciones en la Nube (por Servidor)") {
+    } else if (servicioValor === "Soluciones en la Nube") {
         if (!campoServidores.value.trim()) {
             campoError(campoServidores);
             return;
         } else {
             campoValido(campoServidores);
         }
-    } else if (servicioValor === "Consultoría en Innovación y Soluciones Tecnológicas (por Hora)") {
+    } else if (servicioValor === "Consultoría en Innovación y Soluciones Tecnológicas") {
         if (!campoHoras.value.trim()) {
             campoError(campoHoras);
             return;
@@ -174,6 +174,7 @@ formularioCotizaciones.addEventListener('submit', (e) => {
         }
     }
 
+    calcularServicio();
 });
 
 function campoError(input) {
