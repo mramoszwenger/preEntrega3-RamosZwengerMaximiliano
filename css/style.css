@@ -47,17 +47,6 @@
     }
 }
 
-.quoter__selector {
-    font-size: 16px;
-    color: #333333;
-}
-
-.service__selector {
-    font-size: 20px;
-    color: #333333;
-    text-shadow: #000000 1px 0 10px;
-}
-
 .quoter #botonCotizar {
     background-color: #13C0E5;
     border-color: #13C0E5;
@@ -85,6 +74,7 @@
     color: #333333;
     text-shadow: #000000 1px 0 10px;
     margin-top: 15%;
+    text-align: center;
 }
 
 #botonPresupuesto {

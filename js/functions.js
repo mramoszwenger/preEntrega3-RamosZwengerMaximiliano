@@ -54,9 +54,11 @@ formularioCotizaciones.addEventListener('submit', (e) => {
     console.log(e);
 });
 
+// Visualizar eventos en tiempo real
+
 inputs.forEach(input => {
     input.addEventListener('input', (e)=> {
-        console.log(e.target.value);
+        console.log(e.target);
     });
 })
 
