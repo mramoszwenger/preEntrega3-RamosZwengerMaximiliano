@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap");
 
 .quoter__head {
-    background-image:url(/img/backgroundKeyboard.jpg);
+    background-image:url(https://raw.githubusercontent.com/mramoszwenger/preEntrega3-RamosZwengerMaximiliano/main/img/backgroundKeyboard.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -25,7 +25,7 @@
 }
 
 .quoter__form {
-    background-image: url(/img/redDatos.png);
+    background-image: url(https://raw.githubusercontent.com/mramoszwenger/preEntrega3-RamosZwengerMaximiliano/main/img/redDatos.png);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 5% 20% 5% 20%;
