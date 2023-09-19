@@ -65,8 +65,36 @@
     padding: 1.25% 10.25% 1.25% 10.25%;
 }
   
-#mensajeEnvio {
-    font-size: 1.5rem;
+.quoter__result{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #dddddd70;
+    margin-top: 2rem;
+    border-radius: 5px;
+    gap: .5rem;
+    text-align: center;
+    color: #000000;
+}
+
+.quoter__result-actions button{
+    outline: none;
+    border: none;
+    padding: .5rem;
+    border-radius: 5px;
+    width: 70px;
+    margin-right: 2rem;
+    background-color: #777777;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.quoter__result-actions button:last-of-type{
+    margin-right: 0rem;
+}
+
+.disable{
+    display: none !important;
 }
 
 .subtitle__custom {

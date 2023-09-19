@@ -8,6 +8,13 @@ const botonPresupuesto = document.querySelector('#botonPresupuesto');
 
 let validarForm = false;
 
+// Mostrar Cotización
+
+const resultado = document.querySelector('#resultado')
+const resultadoTexto = document.querySelector('#resultadoTexto')
+const btnSi = document.querySelector('#bntSi')
+const btnNo = document.querySelector('#btnNo')
+
 // Funcion Cotizador Rapido
 
 function calcularServicio() {
@@ -39,6 +46,9 @@ function calcularServicio() {
     }
 
     const costoConIva = (Math.round((costoServicio * porcentajeIva) + costoServicio).toFixed(2).replace('.', ','));
+
+    resultado.classList.remove('disable')
+    resultadoTexto.innerHTML = `${usuarioValor}, el servicio de ${servicioValor}, tendría un costo mensual con IVA de: $${costoConIva}`
 
     console.log("Usuario:", usuarioValor);
     console.log("Correo:", correoValor);
@@ -110,6 +120,20 @@ function campoValido(input) {
     input.classList.remove('is-invalid');
     input.classList.add('is-valid');
 }
+
+// Realizar nueva cotización
+
+btnSi.addEventListener('click', () => {
+    resultado.classList.add('disable');
+    servicio.selectedIndex = 0; 
+    unidades.value = '';
+});
+
+btnNo.addEventListener('click', () => {
+    resultado.classList.add('disable');
+    formularioCotizaciones.reset();
+});
+
 
 // Solicutud Presupuesto a Medida
 
