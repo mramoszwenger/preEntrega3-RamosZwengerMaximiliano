@@ -226,6 +226,8 @@ formularioCotizaciones.addEventListener('submit', () => {
     cotizacionesExistente.push(datos);
 
     localStorage.setItem('cotizaciones', JSON.stringify(cotizacionesExistente));
+
+    console.log(cotizacionesExistente);
 });
 
 // Solicutud Presupuesto a Medida
