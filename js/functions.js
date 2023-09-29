@@ -221,13 +221,10 @@ formularioCotizaciones.addEventListener('submit', () => {
         servicio: servicio.value
     };
     
-    // Obtén la lista de cotizaciones existente del local storage
     const cotizacionesExistente = JSON.parse(localStorage.getItem('cotizaciones')) || [];
 
-    // Agrega la nueva cotización a la lista
     cotizacionesExistente.push(datos);
 
-    // Almacena la lista actualizada en el local storage
     localStorage.setItem('cotizaciones', JSON.stringify(cotizacionesExistente));
 });
 
