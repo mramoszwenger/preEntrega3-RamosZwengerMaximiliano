@@ -214,14 +214,21 @@ function ocultarResultado(ocultar) {
 }
 
 // Almacenar datos en el Local Storage
-
 formularioCotizaciones.addEventListener('submit', () => {
     const datos = {
         usuario: usuario.value,
         correo: correo.value,
         servicio: servicio.value
     };
-    localStorage.setItem('cotizacion', JSON.stringify(datos));
+    
+    // Obtén la lista de cotizaciones existente del local storage
+    const cotizacionesExistente = JSON.parse(localStorage.getItem('cotizaciones')) || [];
+
+    // Agrega la nueva cotización a la lista
+    cotizacionesExistente.push(datos);
+
+    // Almacena la lista actualizada en el local storage
+    localStorage.setItem('cotizaciones', JSON.stringify(cotizacionesExistente));
 });
 
 // Solicutud Presupuesto a Medida
