@@ -213,6 +213,17 @@ function ocultarResultado(ocultar) {
     }
 }
 
+// Almacenar datos en el Local Storage
+
+formularioCotizaciones.addEventListener('submit', () => {
+    const datos = {
+        usuario: usuario.value,
+        correo: correo.value,
+        servicio: servicio.value
+    };
+    localStorage.setItem('cotizacion', JSON.stringify(datos));
+});
+
 // Solicutud Presupuesto a Medida
 
 botonPresupuesto.addEventListener('click', () => {
